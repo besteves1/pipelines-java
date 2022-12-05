@@ -8,6 +8,8 @@ trigger:
 
 pool:
   name: Default
+  Demands:
+  - Agent.Version -equals 2.163.1
 
 steps:
 - task: Maven@3
