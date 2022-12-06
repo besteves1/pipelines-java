@@ -21,7 +21,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     
-export FLOW_API_KEY='EzKlIxhFK2Dg8obDLvlmQTRUnIlJ6azlFzmTuiX_GK4'
-export FLOW_PROJECT_CODE='OkHcS_9AFG7i5gVe'
+export FLOW_API_KEY: 'EzKlIxhFK2Dg8obDLvlmQTRUnIlJ6azlFzmTuiX_GK4'
+export FLOW_PROJECT_CODE: 'OkHcS_9AFG7i5gVe'
 cd https://github.com/besteves1/pipelines-java
 conviso sast run
