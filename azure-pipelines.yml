@@ -9,7 +9,7 @@ trigger:
 jobs:
 - job: Conviso_Appsec_Sast
   pool:
-    vmImage: 'ubuntu-16.04'
+    vmImage: 'ubuntu-latest'
   container:
     image: 'convisoappsec/flowcli'
   variables:
