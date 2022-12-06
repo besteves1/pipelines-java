@@ -22,4 +22,8 @@ steps:
         conviso sast run
     env:
         FLOW_API_KEY: $(FLOW_API_KEY)
+  - bash: | 
+         conviso sca run
+    env:
+         FLOW_API_KEY: $(FLOW_API_KEY)
 
