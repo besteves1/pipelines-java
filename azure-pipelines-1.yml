@@ -9,20 +9,19 @@ trigger:
 #pool:
 #  vmImage: ubuntu-latest
 
-jobs:
-- job: Conviso_Appsec_Sast
-  pool:
-    vmImage: 'ubuntu-16.04'
-  container:
-    image: 'convisoappsec/flowcli'
-  variables:
-    FLOW_PROJECT_CODE: 'OkHcS_9AFG7i5gVe'
 
-  steps:
-    - bash: |
-          conviso sast run
-      env:
-         FLOW_API_KEY: $(FLOW_API_KEY)
+pool:
+  vmImage: 'ubuntu-16.04'
+container:
+  image: 'convisoappsec/flowcli'
+variables:
+  FLOW_PROJECT_CODE: 'OkHcS_9AFG7i5gVe'
+
+steps:
+  - bash: |
+        conviso sast run
+    env:
+        FLOW_API_KEY: $(FLOW_API_KEY)
 
 steps:
 - task: Maven@3
