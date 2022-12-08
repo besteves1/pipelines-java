@@ -7,14 +7,21 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+jobs:
+- job: Conviso_Appsec_Sast
+  pool:
+    vmImage: 'ubuntu-latest'
+  container:
+    image: 'convisoappsec/flowcli'
+  variables:
+    FLOW_PROJECT_CODE: 'OkHcS_9AFG7i5gVe'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'    
+  steps:
+  - bash: |
+        conviso sast run
+    env:
+        FLOW_API_KEY: $(FLOW_API_KEY)
+  - bash: | 
+         conviso sca run
+    env:
+         FLOW_API_KEY: $(FLOW_API_KEY)       
